@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Service</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+
+	<script type="text/javascript">
+		var desk = angular.module("app", []);
+		desk.controller("cntrl", function($scope){
+			let myData = ["a", "b", "c", "d", "e", "f", "g"];
+			let myArray = ["Zoha", "Shuvo", "Ishrat", "Mokabbir"];
+
+			Array.prototype.swap = function(index_A, index_B) {
+			    let input = this;
+
+			    let temp = input[index_A];
+			    input[index_A] = input[index_B];
+			    input[index_B] = temp;
+			}
+
+			myData.swap(2, 5);
+			//console.log(myData); // a b f d e c g
+
+			myArray.swap(0, 3);
+			//console.log(myArray);
+///////////////////////////////////////////////////////////////////////////////////
+			let activities  = [
+							    ['a', 'b', 'c', 'd'],
+							    ['Zoha', 'Shuvo', 'Ishrat', 'Mokabbir']
+							    
+							];
+
+Array.prototype.swap = function(index_A, index_B) {
+			    let input = this;
+
+			    let temp = input[index_A];
+			    input[index_A] = input[index_B];
+			    input[index_B] = temp;
+			}
+
+			activities.forEach((activity) => {
+				//console.log(activities);
+			    activity.forEach((data) => {
+			    	//console.log(data);
+
+			activity.swap(0, 3);
+			console.log(activity);
+			        
+			    });
+			});
+
+	///////////////////////////////////		
+		});
+	</script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="cntrl">
+		 
+	</div>
+
+
+</body>
+</html>
+

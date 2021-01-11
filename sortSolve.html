@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Service</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+
+	<script type="text/javascript">
+		var desk = angular.module("app", []);
+		desk.controller("cntrl", function($scope){
+
+		});
+		var sortCol=prompt("Enter index number");
+		var array = [
+				  ['key9', 10, 4,'12','31'],
+				  ['key2', 3, '6', 'X','dd'],
+				  ['key3', 40, 2,'A','da3'],
+				  ['key4', 20, 9, 'C','33']
+				];
+
+				
+
+				if(typeof array[0][sortCol] == "string"){
+
+					document.write("is string");
+					var sort = array.sort((a, b) => a[sortCol].localeCompare(b[sortCol]));
+					console.log(sort);
+
+				}
+				else{
+					document.write("is number");
+
+					var sort = array.sort((a,b) => a[sortCol] - b[sortCol]);
+					console.log(sort);
+				}
+
+		
+
+	</script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="cntrl">
+		
+	</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Service</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+
+	<script type="text/javascript">
+		var desk = angular.module("app", []);
+		desk.controller("cntrl", function($scope){
+
+			var images = ["a", "b", "c"];
+			var images2 = ["x", "y", "z"];
+			var images3 = ["x", "y", "z"];
+			var temp = images.push(images2);
+			images.push(images3);
+
+			//console.log(images);
+
+
+			string[][] languages = new string[2][];
+            languages[0] = new string[2];
+            languages[1] = new string[3];
+// inserting data into double dimensional arrays.
+            for (int i = 0; i < 2; i++)
+            {
+                languages[0][i] = "Jagged"+i.ToString();
+            }
+            for (int j = 0; j < 3; j++)
+            {
+                languages[1][j] = "Jag"+j.ToString();
+            }
+
+// doing foreach through 2 dimensional arrays.
+foreach (string[] s in languages)
+            {
+                foreach (string a in s)
+                {
+                    Console.WriteLine(a);
+                }
+            }
+
+
+			
+
+    
+    
+
+		});
+	</script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="cntrl">
+		 
+	</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Service</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+
+	<script type="text/javascript">
+		var desk = angular.module("app", []);
+		desk.controller("cntrl", function($scope){
+			var UserCollection = [
+			{
+				FirstName: 'Shuvo', LastName: 'Ahamed', Location: 'Manikgonj', 
+				Languages: [
+				{Language: '.Net'},
+				{Language: 'C++'}
+
+				]
+			},
+			{
+				FirstName: 'Asif', LastName: 'Hasan', Location: 'Dhaka' , 
+				Languages: [
+				{Language: '.Net'},
+				{Language: 'C++'}
+
+				]
+			},
+			{
+				FirstName: 'Akash', LastName: 'Ahamed', Location: 'Singair', 
+				Languages: [
+				{Language: '.Net'},
+				{Language: 'C++'}
+				]
+			},
+			{
+				FirstName: 'Shamim', LastName: 'hossain', Location: 'Baira', 
+				Languages: [
+				{Language: '.Net'},
+				{Language: 'C++'}
+				]
+			}
+
+			]
+			$scope.UserCollection = UserCollection;
+
+		});
+
+		var myArray1 = new Array(4);
+
+		for(var i = 0; i < 4; i++){
+			myArray1[i] = new Array(3);
+		}
+		var start = 1;
+
+		for(var i = 0; i < 4; i++){
+			for(var j = 0; j < 3; j++){
+				myArray1[i][j] = start;
+				start = start + 1;
+			}
+		}
+
+		for(var i = 0; i < 4; i++){
+			for(var j = 0; j < 3; j++){
+				document.write(myArray1[i][j] + "&emsp;");
+			}
+			document.write("<br/>");
+		}
+
+
+	</script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="cntrl">
+		<ul>
+			<li ng-repeat="user in UserCollection">
+				{{$index + 1}}: {{user.FirstName}} is living in {{user.Location}} and working in following languages
+				<ul>
+				<li ng-repeat="language in user.Languages">
+					{{$index + 1}}: {{language.Language}}
+				</li>
+			</ul>
+		</li>
+			
+		</ul>
+	</div>
+
+
+</body>
+</html>
+

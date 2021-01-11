@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Service</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+
+	<script type="text/javascript">
+		var desk = angular.module("app", []);
+		desk.controller("cntrl", function($scope){
+			
+			let grades  = [
+			['a', 'b', 'c', 'd'],
+			['Zoha', 'Shuvo', 'Ishrat', 'Mokabbir']
+
+			];
+
+			Array.prototype.swap = function(index_A, index_B) {
+				let input = this;
+				
+				let temp = input[index_A];
+				input[index_A] = input[index_B];
+				input[index_B] = temp;
+			}
+
+			for(let i =0; i <= 1; i++){				
+				var g = grades[i];
+				g.swap(0, 1);
+				
+			}
+			console.log(g);
+			//g.swap(0, 3);
+			//console.log(g);
+
+		});
+	</script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="cntrl">
+		
+
+	</div>
+
+
+</body>
+</html>
+

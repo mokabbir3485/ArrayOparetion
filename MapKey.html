@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Service</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+
+	<script type="text/javascript">
+		var desk = angular.module("app", []);
+		desk.controller("cntrl", function($scope){
+
+			var myArray = {id1: 100, id2: 200, "tag with spaces": 300};
+			myArray.id3 = 400;
+			myArray["id4"] = 500;
+			console.log(myArray);
+			console.log(typeof myArray);
+
+			for (var key in myArray) {
+				console.log("key " + key + " has value " + myArray[key]);
+				console.log(key);
+			}
+
+			var hash = {};
+			hash['bob'] = 123;
+			hash['joe'] = 456;
+
+			var sum = 0;
+			for (var name in hash) {
+				sum += hash[name];
+			}
+// alert(sum); // 579
+
+var map = new Map();
+map.set('name', 'John');
+map.set('id', 11);
+
+// Get the full content of the Map
+console.log(map); // Map { 'name' => 'John', 'id' => 11 }
+console.log(typeof map);
+
+console.log(map.get('name')); // John 
+console.log(map.get('id')); // 11
+
+console.log(map.size); // 2
+
+console.log(map.has('name')); // true
+console.log(map.has('age')); // false
+
+console.log(map.keys()); // MapIterator { 'name', 'id' }
+
+console.log(map.values()); // MapIterator { 'John', 11 }
+
+for (let element of map) {
+	console.log(element);
+}
+
+// Output:
+// [ 'name', 'John' ]
+// [ 'id', 11 ]
+
+for (let [key, value] of map) {
+	console.log(key + " - " + value);
+}
+
+// Output: 
+// name - John
+// id - 11
+
+
+for (let key of map.keys()) {
+	console.log(key);
+}
+
+// Output:
+// name
+// id
+
+
+for (let value of map.values()) {
+	console.log(value);
+}
+
+// Output:
+// John
+// 11
+
+
+
+
+var countries = ['Canada','Us','France','Italy'];
+console.log('I am from '+countries[0]);
+angular.forEach(countries, function(key, value) {
+	console.log(key, value);
+});
+
+
+var person = {
+	name: "James",
+	occupation: "programmer",
+	height: {
+		feet: 6,
+		inches: 1
+	},
+}
+
+console.log("My name is "+person.name+" and I am a "+person.height.feet+" ft "+person.height.inches+" "+person.occupation);
+
+angular.forEach(person, function(key, value) {
+	console.log(key, value);
+});
+
+
+var people = [
+{
+	name: "James",
+	occupation: "programmer",
+	height: {
+		feet: 6,
+		inches: 1
+	}
+}, {
+	name: "Peter",
+	occupation: "designer",
+	height: {
+		feet: 4,
+		inches: 10
+	}
+}, {
+	name: "Joshua",
+	occupation: "CEO",
+	height: {
+		feet: 5,
+		inches: 11
+	}
+}
+];
+
+console.log("My name is "+people[2].name+" and I am a "+people[2].height.feet+" ft "+people[2].height.inches+" "+people[2].occupation+"\n");
+
+
+// angular.forEach(people, function(key, person) {
+// 	console.log("My name is "+person.name+" and I am a "+person.height+" ft "+person.height+" "+person.occupation+"\n");
+// });
+
+
+var key = "key1";
+var obj = {};
+obj[key] = 3485;
+console.log(obj[key]); //3485
+
+
+
+var cars = [
+{ "id": 1, brand: "Ferrari" }
+, { "id": 2, brand: "Lotus" }
+, { "id": 3, brand: "Lamborghini" }
+];
+
+
+var countries = ['Canada','Us','France','Italy'];  
+
+    // Arrow Function  
+
+    countries.map((value, key) => key+ ' : ' + value );  
+
+    // Anonomous Function  
+
+    countries.map(function(value, key){  
+
+    	return key + " : " + value; 
+    });  
+
+
+});
+</script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="cntrl">
+		
+
+	</div>
+
+
+</body>
+</html>
+

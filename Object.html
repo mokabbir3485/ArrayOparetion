@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Service</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+		var desk = angular.module("app", []);
+		desk.controller("cntrl", function($scope){
+
+			
+			$scope.ItemTableHeadersN = [
+			["SN", "Name", "Dept"]
+
+			]
+
+    // An array of values 
+    $scope.ItemTableDataRow = [
+    [1, "Shuvo", "SWE"],
+    ["2", "Mokabbir", "EEE"],
+    ["3", "Abir", "CSC"]
+
+    ]
+
+
+    $scope.InvoiceWiseItemList = [];
+
+    for (var i = 0; i < $scope.ItemTableDataRow.length; i++) {
+    	var result = {};
+    	$scope.ItemTableHeadersN[0].forEach((key, j) =>  result[key] = $scope.ItemTableDataRow[i][j]);
+    	$scope.InvoiceWiseItemList.push(result);
+    }
+    console.log($scope.InvoiceWiseItemList);
+
+//var picker = new Pikaday({ field: document.getElementById('datepicker') });
+var picker = new Pikaday(
+{
+	field: document.getElementById('datepicker'),
+        //firstDay: 1,
+        minDate: new Date(),
+        maxDate: new Date(2050, 12, 31),
+        yearRange: [2000,2050],
+        dateFormat: "yy-mm-dd" 
+    });
+
+$(function(){
+	$("#datepicker").datepicker();
+});
+
+
+});
+</script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="cntrl">
+		<input type="text" id="datepicker">
+
+		<p>Date: <input type="text" id="datepicker"></p>
+	</div>
+
+
+</body>
+</html>
+
